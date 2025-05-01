@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ورود به سیستم</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+
+    * {
+      box-sizing: border-box;
+      direction: rtl;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      background: linear-gradient(to right, #8360c3, #2ebf91);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .btn-select {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .btn-select button {
+      flex: 1;
+      min-width: 120px;
+      padding: 10px;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .btn-select button:hover {
+      background-color: #0056b3;
+    }
+
+    .form-section {
+      display: none;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button.submit {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button.submit:hover {
+      background-color: #45a049;
+    }
+
+    .note {
+      font-size: 13px;
+      margin-top: 15px;
+      color: gray;
+    }
+
+    @media (max-width: 480px) {
+      .btn-select {
+        flex-direction: column;
+      }
+
+      .btn-select button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>ورود به سیستم</h2>
+
+    <div class="btn-select">
+      <button onclick="showForm('admin')">ادمین</button>
+      <button onclick="showForm('user')">کاربر</button>
+    </div>
+
+    <!-- فرم ورود ادمین -->
+    <div id="admin-form" class="form-section">
+      <form onsubmit="return loginAdmin()">
+        <input type="text" id="admin-username" placeholder="نام کاربری ادمین" required>
+        <input type="password" id="admin-password" placeholder="رمز عبور ادمین" required>
+        <button type="submit" class="submit">ورود به عنوان ادمین</button>
+      </form>
+    </div>
+
+    <!-- فرم ورود کاربر -->
+    <div id="user-form" class="form-section">
+      <form onsubmit="return loginUser()">
+        <input type="text" id="user-username" placeholder="نام کاربری کاربر" required>
+        <input type="password" id="user-password" placeholder="رمز عبور کاربر" required>
+        <button type="submit" class="submit">ورود به عنوان کاربر</button>
+      </form>
+    </div>
+
+    <div class="note">نقش خود را انتخاب و اطلاعات را وارد نمایید.</div>
+  </div>
+
+  <script>
+    function showForm(role) {
+      document.getElementById("admin-form").style.display = (role === "admin") ? "block" : "none";
+      document.getElementById("user-form").style.display = (role === "user") ? "block" : "none";
+    }
+
+    function loginAdmin() {
+      const user = document.getElementById("admin-username").value;
+      const pass = document.getElementById("admin-password").value;
+
+      if (user === "admin" && pass === "1234") {
+        window.location.href = "admin_welcome.html";
+      } else {
+        alert("نام کاربری یا رمز عبور اشتباه است.");
+      }
+
+      return false;
+    }
+
+    function loginUser() {
+      const user = document.getElementById("user-username").value;
+      const pass = document.getElementById("user-password").value;
+
+      if (user && pass) {
+        window.location.href = "user_welcome.html";
+      } else {
+        alert("اطلاعات را وارد کنید.");
+      }
+
+      return false;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم ثبت‌نام</title>
+    <style>
+        .register-form {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .register-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .register-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .register-form button:hover {
+            background-color: #45a049;
+        }
+
+        .role-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .role-buttons button {
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-form">
+        <h2 style="text-align: center;">ثبت‌نام</h2>
+        <form>
+            <input type="text" placeholder="نام کامل" required>
+            <input type="email" placeholder="ایمیل" required>
+            <input type="password" placeholder="کلمه عبور" required>
+            <input type="password" placeholder="تأیید کلمه عبور" required>
+            <div class="role-buttons">
+                <button type="button" onclick="window.location.href='register_user.html'">ثبت‌نام به عنوان کاربر</button>
+                <button type="button" onclick="window.location.href='register_admin.html'">ثبت‌نام به عنوان ادمین</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
