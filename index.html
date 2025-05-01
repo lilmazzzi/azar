@@ -2,39 +2,90 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>چشمه آذر</title>
+  
+  <!-- لینک فونت بی نازنین از گوگل فونت -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+
   <style>
+    /* استایل کلی */
     body {
       margin: 0;
       padding: 0;
-      font-family: Tahoma, sans-serif;
-      background-color: #f2f2f2;
+      font-family: 'Vazir', sans-serif; /* تغییر فونت به بی نازنین */
+      background: linear-gradient(to bottom, #e0f7fa, #e0f7fa); /* رنگ آبی کم‌رنگ */
+      color: #003366; /* رنگ متن تیره */
+      transition: background 0.3s ease;
+      text-align: center; /* متن را وسط صفحه قرار می‌دهیم */
     }
 
+    /* هدر */
     header {
-      background-color: #4CAF50;
-      color: white;
       padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      position: relative;
+      background-color: #80deea; /* آبی ملایم برای هدر */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* سایه برای هدر */
     }
 
+    /* عنوان داخل هدر */
     .title {
-      font-size: 24px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 26px;
+      font-weight: bold;
+      color: #006064; /* رنگ تیره برای عنوان */
     }
 
+    /* دکمه ثبت‌نام */
     .register-btn {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
       background-color: white;
-      color: #4CAF50;
-      padding: 10px 20px;
+      color: #00796b;
+      padding: 12px 25px;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
+      border: 1px solid #00796b;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* سایه برای دکمه */
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
+    /* تغییرات هنگام هاور دکمه */
     .register-btn:hover {
-      background-color: #e6ffe6;
+      background-color: #b2dfdb;
+      transform: translateY(-3px);
+    }
+
+    /* برای صفحات داخلی یا محتوا */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 25px; /* حاشیه بیضی برای محتوا */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* سایه برای محتوا */
+    }
+
+    /* واکنش‌گرایی برای موبایل */
+    @media (max-width: 600px) {
+      .title {
+        font-size: 20px;
+      }
+
+      .register-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -43,5 +94,9 @@
     <div class="title">چشمه آذر</div>
     <a href="login_admin.html" class="register-btn">ثبت نام</a>
   </header>
+
+  <div class="container">
+    <p>به سایت تصفیه آب چشمه آذر خوش آمدید.</p>
+  </div>
 </body>
 </html>
