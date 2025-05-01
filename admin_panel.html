@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل مدیریت</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif; /* تغییر فونت به بی نازنین */
+            background-color: #e0f7fa; /* رنگ آبی کم‌رنگ برای پس‌زمینه */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 25px; /* حاشیه بیضی شکل */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* سایه نرم */
+            position: relative;
+        }
+
+        .welcome-message {
+            background-color: #1496d2;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .dashboard-content {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* استایل برای دکمه پنل مدیریت */
+        .admin-panel-btn {
+            background-color: #2196F3;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* تغییرات هنگام هاور دکمه */
+        .admin-panel-btn:hover {
+            background-color: #1976D2;
+            transform: translateY(-3px);
+        }
+
+        /* قرار دادن دکمه در بالا سمت راست */
+        .top-right-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        /* دکمه پست جدید */
+        .new-post-btn {
+            background-color: #FF9800;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* تغییرات هنگام هاور دکمه پست جدید */
+        .new-post-btn:hover {
+            background-color: #FB8C00;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-message">
+            پنل مدیریت
+        </div>
+
+        <!-- دکمه پنل مدیریت در بالا سمت راست -->
+        <div class="top-right-btn">
+            <a href="index.html" class="admin-panel-btn">صفحه اصلی</a>
+        </div>
+
+        <div class="dashboard-content">
+            <p>شما اکنون در پنل مدیریت هستید. در اینجا می‌توانید پست‌های جدید اضافه کنید.</p>
+
+            <!-- دکمه پست جدید -->
+            <a href="new_post.html" class="new-post-btn">پست جدید</a>
+        </div>
+    </div>
+</body>
+</html>

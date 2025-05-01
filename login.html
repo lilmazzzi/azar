@@ -1,62 +1,64 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحه ورود</title>
-    <style>
-        .login-form {
-            width: 300px;
-            margin: 100px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    <!DOCTYPE html>
+    <html lang="fa">
+    <head>
+        <link rel="stylesheet" href="style.css">
 
-        .login-form input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>صفحه ورود</title>
+        <style>
+            .login-form {
+                width: 300px;
+                margin: 100px auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
 
-        .login-form button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+            .login-form input {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
 
-        .login-form button:hover {
-            background-color: #45a049;
-        }
+            .login-form button {
+                width: 100%;
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
 
-        .role-buttons {
-            display: flex;
-            justify-content: space-between;
-        }
+            .login-form button:hover {
+                background-color: #45a049;
+            }
 
-        .role-buttons button {
-            width: 48%;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-form">
-        <h2 style="text-align: center;">ورود</h2>
-        <form>
-            <input type="text" placeholder="نام کاربری" required>
-            <input type="password" placeholder="کلمه عبور" required>
-            <div class="role-buttons">
-                <button type="button" onclick="window.location.href='login_user.html'">ورود به عنوان کاربر</button>
-                <button type="button" onclick="window.location.href='login_admin.html'">ورود به عنوان ادمین</button>
-            </div>
-        </form>
-    </div>
-</body>
-</html>
+            .role-buttons {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .role-buttons button {
+                width: 48%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-form">
+            <h2 style="text-align: center;">ورود</h2>
+            <form>
+                <input type="text" placeholder="نام کاربری" required>
+                <input type="password" placeholder="کلمه عبور" required>
+                <div class="role-buttons">
+                    <button type="button" onclick="window.location.href='login_user.html'">ورود به عنوان کاربر</button>
+                    <button type="button" onclick="window.location.href='login_admin.html'">ورود به عنوان ادمین</button>
+                </div>
+            </form>
+        </div>
+    </body>
+    </html>

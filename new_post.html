@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پست جدید</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+    <style>
+        /* استایل کلی */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazir', sans-serif; /* تغییر فونت به بی نازنین */
+            background: linear-gradient(to bottom, #e0f7fa, #e0f7fa); /* رنگ آبی کم‌رنگ */
+            color: #003366; /* رنگ متن تیره */
+            transition: background 0.3s ease;
+            text-align: center; /* متن را وسط صفحه قرار می‌دهیم */
+        }
+
+        /* برای محتوا */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 25px; /* حاشیه بیضی برای محتوا */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* سایه برای محتوا */
+        }
+
+        /* پیام خوش‌آمد */
+        .welcome-message {
+            background-color: #80deea;
+            color: #006064;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* استایل فیلدهای فرم */
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #00796b;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 120px;
+        }
+
+        /* برای فیلد آپلود عکس */
+        .file-input-wrapper {
+            position: relative;
+            width: 100%;
+            text-align: center;
+        }
+
+        .file-input-wrapper input[type="file"] {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .file-input-wrapper label {
+            display: inline-block;
+            background-color: #00796b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .file-input-wrapper .file-name {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #00796b;
+        }
+
+        /* دکمه ارسال پست */
+        .form-btn {
+            background-color: #00796b;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 20px;
+        }
+
+        .form-btn:hover {
+            background-color: #004d40;
+            transform: translateY(-3px);
+        }
+
+        /* واکنش‌گرایی برای موبایل */
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-message">
+            ایجاد پست جدید
+        </div>
+
+        <form action="{% url 'new_post' %}" method="POST" enctype="multipart/form-data">
+            <!-- فیلد عنوان (تکست باکس) -->
+            <div>
+                <label for="id_title">عنوان پست:</label>
+                <input type="text" name="title" id="id_title" placeholder="عنوان پست خود را وارد کنید" required>
+            </div>
+            
+            <!-- فیلد توضیحات (تکست باکس) -->
+            <div>
+                <label for="id_description">توضیحات پست:</label>
+                <textarea name="description" id="id_description" placeholder="توضیحات پست خود را وارد کنید" required></textarea>
+            </div>
+
+            <!-- فیلد آپلود عکس -->
+            <div class="file-input-wrapper">
+                <label for="id_image">آپلود عکس:</label>
+                <input type="file" name="image" id="id_image" required>
+                <div class="file-name" id="file-name">هیچ فایلی انتخاب نشده است</div>
+            </div>
+
+            <!-- دکمه ارسال پست -->
+            <button type="submit" class="form-btn">ارسال پست</button>
+        </form>
+    </div>
+
+    <script>
+        // نمایش نام فایل انتخاب‌شده در کنار فیلد آپلود عکس
+        document.getElementById("id_image").addEventListener("change", function() {
+            var fileName = this.files.length > 0 ? this.files[0].name : "هیچ فایلی انتخاب نشده است";
+            document.getElementById("file-name").textContent = fileName;
+        });
+    </script>
+</body>
+</html>
